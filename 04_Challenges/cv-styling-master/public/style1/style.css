@@ -140,10 +140,9 @@ h3:after{
 #competencies {
     width: 480px;
 }
-@media only screen and (min-width: 200px) and (max-width: 800px) {
+@media only screen and (min-width: 300px) and (max-width: 800px) {
     body > div > header > div{
         background-color: #999999;
-        /* width: auto; */
     }
     body {
         width: fit-content;
@@ -172,7 +171,6 @@ h3:after{
         display: flex;
         flex-direction: column;
         padding: 10px;
-        /* width: 70%; */
     }
     #contact {
         position: relative;
@@ -210,7 +208,6 @@ h3:after{
         border: 2px solid #ff0000;
         background-color:#ff0000;
         padding-right: 35%;
-        /* width: 50%; */
         font-size: large;
     }
     [data-skill="3"] span {
@@ -241,3 +238,79 @@ h3:after{
     }
 
 }
+@media only screen and (min-width: 800px) and (max-width: 1800px) {
+    body > div > header > div{
+        display: flex;
+        background-color: #999999;
+        padding-left: 3%;
+
+    }
+
+    body {
+        width: 75%;
+        margin: auto;
+        background: white;
+        
+    }
+    .contacts {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 10px;
+        width: 40%;
+        padding-left: 0%;
+    }
+
+    h1, h2 {
+        color: #ff0000;
+        font-size: 120%;
+    }
+    img {
+        position: absolute;
+        width: 80px;
+        height: 80px;
+        top: 20px;
+        left: 35%;
+    }
+    [data-skill="5"] span {
+        border: 2px solid #ff0000;
+        background-color:#ff0000;
+        padding-right: 35%;
+        font-size: large;
+    }
+    [data-skill="3"] span {
+        border: 2px solid #ff0000;
+        background-color:#ff0000;
+        padding-right: 17%;
+        font-size: large;
+    }
+    [data-skill="1"] span {
+        content: " ";
+        display: block;
+        background-color: #ff0000;
+        width: 49px;
+        border: 2px solid #ff0000;
+        font-size: large;
+    }
+    [data-skill="9"] span {
+        border: 2px solid #ff0000;
+        background-color:#ff0000;
+        padding-right: 70%;
+        font-size: large;
+    }
+    [data-skill="7"] span {
+        border: 2px solid #ff0000;
+        background-color:#ff0000;
+        padding-right: 45%;
+        font-size: large;
+    }
+    #competencies {
+        width: auto;
+    }
+
+
+
+}
+
+
+
