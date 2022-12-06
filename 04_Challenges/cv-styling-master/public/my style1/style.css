@@ -1,0 +1,316 @@
+body > div > header > div{
+    display: flex;
+    padding-left: 125px;
+    padding-bottom: 15px;
+    background-color: #999999;
+    height: 130px;   
+}
+body {
+    width: 55%;
+    margin: auto;
+    background: white;
+}
+html{
+    background-color: black;
+}
+h1, h2 {
+    color: #ff0000;
+}
+.contacts {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 10px;
+    width: 40%;
+    padding-left: 70px;
+}
+dl{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0%;
+    line-height: 21px;
+    background-color: black;
+}
+.contact-type {
+    background-color: #ff0000;
+    width: 120px;
+    color: white;
+    padding-left: 4px;
+}
+.contact-value > a{
+    text-decoration: none;
+    color: #ff0000;
+    margin-left: -30px;
+}
+.content{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    grid-auto-rows: 60px;
+    padding: 60px;
+}
+h3::before{
+    display: inline-block;
+    content: "";
+    height: 20px;
+    width: 20px;
+    background-color: #ff0000;
+    border-radius: 50px;
+    margin-right: 5px;
+}
+h3:after{
+    content: " ";
+    display: block;
+    border-bottom: 0.5px solid #cccccc;
+    padding-top: 5px;
+}
+.skill{
+    content: " ";
+    display: block;
+    border: 6px solid #cccccc;
+    background-color: #cccccc;
+    margin: 5px;
+    color: white;
+}
+.skills-primary::before{
+    content: "Main";
+}
+[data-skill="5"] span {
+    border: 2px solid #ff0000;
+    background-color:#ff0000;
+    padding-right: 160px;
+    font-size: large;
+}
+[data-skill="3"] span {
+    border: 2px solid #ff0000;
+    background-color:#ff0000;
+    padding-right: 115px;
+    font-size: large;
+}
+[data-skill="1"] span {
+    content: " ";
+    display: block;
+    background-color: #ff0000;
+    width: 55px;
+    border: 2px solid #ff0000;
+    font-size: large;
+}
+[data-skill="9"] span {
+    border: 2px solid #ff0000;
+    background-color:#ff0000;
+    padding-right: 370px;
+    font-size: large;
+}
+[data-skill="7"] span {
+    border: 2px solid #ff0000;
+    background-color:#ff0000;
+    padding-right: 260px;
+    font-size: large;
+}
+.skills-secondary{
+    padding-top: 20px;
+    opacity: 80%;
+}
+.skills-secondary::before{
+    content: "Other";
+}
+.experience-type{
+    color: #ff0000;
+}
+.experience-type::after{
+    content: "@";
+    font-weight: lighter;
+}
+.experience-institution{
+    color: #ff0000;
+    font-weight: lighter;
+}
+.experience-details{
+    color: #999999;
+}
+.experience-details::before{
+    content: "In";
+}
+.experience-date-separator{
+    color: #ff0000;
+}
+#contact > h3{
+    visibility: hidden;
+}
+#competencies {
+    width: 480px;
+}
+@media only screen and (min-width: 300px) and (max-width: 800px) {
+    body > div > header > div{
+        background-color: #999999;
+    }
+    body {
+        width: fit-content;
+        margin: auto;
+        background: white;
+    }
+    html{
+        background-color:white;
+    }
+    h1, h2 {
+        color: #ff0000;
+        font-size: 15px;
+    }
+    img {
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        left: 20px;
+        top: 70px;
+    }
+    hgroup {
+        position: absolute;
+        left: 20px;
+    }
+    .content{
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+    }
+    #contact {
+        position: relative;
+        bottom: 0px;
+    }
+    #contact > h3 {
+        visibility: visible;
+    }
+    .contacts {
+        display: flex;
+        flex-direction: column;
+        width: 255px;
+        margin-top: 50px;
+        margin-left: -50px;
+    }
+    dl{
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0%;
+        line-height: 21px;
+        background-color:white;
+    }
+    .skill{
+        content: " ";
+        display: block;
+        border: 6px solid #cccccc;
+        background-color: #cccccc;
+        margin: 5px;
+        color: white;
+    }
+    #competencies {
+        width: auto;
+    }
+    [data-skill="5"] span {
+        border: 2px solid #ff0000;
+        background-color:#ff0000;
+        padding-right: 35%;
+        font-size: large;
+    }
+    [data-skill="3"] span {
+        border: 2px solid #ff0000;
+        background-color:#ff0000;
+        padding-right: 17%;
+        font-size: large;
+    }
+    [data-skill="1"] span {
+        content: " ";
+        display: block;
+        background-color: #ff0000;
+        width: 49px;
+        border: 2px solid #ff0000;
+        font-size: large;
+    }
+    [data-skill="9"] span {
+        border: 2px solid #ff0000;
+        background-color:#ff0000;
+        padding-right: 70%;
+        font-size: large;
+    }
+    [data-skill="7"] span {
+        border: 2px solid #ff0000;
+        background-color:#ff0000;
+        padding-right: 45%;
+        font-size: large;
+    }
+
+}
+@media only screen and (min-width: 800px) and (max-width: 1800px) {
+    body > div > header > div{
+        display: flex;
+        background-color: #999999;
+        padding-left: 3%;
+
+    }
+
+    body {
+        width: 75%;
+        margin: auto;
+        background: white;
+        
+    }
+    .contacts {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 10px;
+        width: 40%;
+        padding-left: 0%;
+    }
+
+    h1, h2 {
+        color: #ff0000;
+        font-size: 120%;
+    }
+    img {
+        position: absolute;
+        width: 80px;
+        height: 80px;
+        top: 20px;
+        left: 35%;
+    }
+    [data-skill="5"] span {
+        border: 2px solid #ff0000;
+        background-color:#ff0000;
+        padding-right: 35%;
+        font-size: large;
+    }
+    [data-skill="3"] span {
+        border: 2px solid #ff0000;
+        background-color:#ff0000;
+        padding-right: 17%;
+        font-size: large;
+    }
+    [data-skill="1"] span {
+        content: " ";
+        display: block;
+        background-color: #ff0000;
+        width: 49px;
+        border: 2px solid #ff0000;
+        font-size: large;
+    }
+    [data-skill="9"] span {
+        border: 2px solid #ff0000;
+        background-color:#ff0000;
+        padding-right: 70%;
+        font-size: large;
+    }
+    [data-skill="7"] span {
+        border: 2px solid #ff0000;
+        background-color:#ff0000;
+        padding-right: 45%;
+        font-size: large;
+    }
+    #competencies {
+        width: auto;
+    }
+
+
+
+}
+
+
+
