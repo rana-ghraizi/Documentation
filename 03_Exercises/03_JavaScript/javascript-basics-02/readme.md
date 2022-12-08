@@ -35,7 +35,7 @@
 
 ## Step 3
 
-1. Create a div
+1. Create a div 
 2. target the div
 3. target the input
 4. When the input changes, display the new text in the div
