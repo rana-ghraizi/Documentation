@@ -25,4 +25,13 @@
     INNER JOIN companies
     on employees.Company = companies.Name
     WHERE employees.Role = "Graphic Designer";
-
+17.
+18. SELECT name, max(Points) AS HighPoints
+    FROM students 
+    GROUP BY name
+    ORDER BY HighPoints DESC
+    LIMIT 3
+19. SELECT AVG(Points) FROM students;
+20. SELECT name FROM students WHERE Points = "500";
+21. SELECT name FROM students WHERE name LIKE '%s%'
+22. SELECT * FROM students ORDER BY Points DESC;
