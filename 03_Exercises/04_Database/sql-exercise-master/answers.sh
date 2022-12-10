@@ -11,3 +11,18 @@
 11. UPDATE graduates SET Graduation = "08/09/2018" WHERE ID="4";
 12. delete from students where ID="4";
 13. 
+14. SELECT employees.Name, employees.Company, companies.Date
+    from employees
+    INNER JOIN companies
+    on employees.Company = companies.Name;
+15. SELECT employees.Name
+    from employees
+    INNER JOIN companies
+    on employees.Company = companies.Name
+    WHERE companies.Date < 2000;
+16. SELECT employees.Company
+    from employees
+    INNER JOIN companies
+    on employees.Company = companies.Name
+    WHERE employees.Role = "Graphic Designer";
+
