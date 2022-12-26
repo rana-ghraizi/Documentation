@@ -70,6 +70,7 @@ function unknownCommand(c){
 function hello(){
   console.log('hello!')
 }
+// This function lists all the possible commands
 function help(){
   console.log('hello: says hello!')
   console.log('exit/quit: quits the application')
