@@ -80,6 +80,7 @@ function hello(x){
 // This function lists all the possible commands
 function help(){
   console.log('hello: says hello!')
+  console.log('hello x: says hello x!')
   console.log('exit/quit: quits the application')
 }
 
