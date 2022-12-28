@@ -49,6 +49,10 @@ function onDataReceived(text) {
   else if(text[0] === 'list'){
     list();
   }
+  else if(text[0] === 'add'){
+    text.shift();
+    add(text.join(" "));
+  }
   else{
     unknownCommand(text[0]);
   }
@@ -86,10 +90,22 @@ function help(){
   console.log('hello x: says hello x!')
   console.log('exit/quit: quits the application')
 }
+var tasks = ["solve the challenge", "commit the code"];
+
 function list(){
-  let tasks = ["solve the challenge", "commit the code"];
   for(i = 0; i < tasks.length; i++){
     console.log(i + 1 + "- " + tasks[i]);
+  }
+}
+function add(x){
+  if(x === ""){
+    console.log("error!");
+  } else {
+    tasks.push(x)
+    for(i = 0; i < tasks.length; i++){
+      console.log(i + 1 + "- " + tasks[i]);
+    }
+  
   }
 }
 
