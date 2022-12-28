@@ -56,6 +56,11 @@ function onDataReceived(text) {
   else if (text[0] === "remove") {
     remove(text);
   }
+  else if (text[0] === "edit") {
+    num = text.slice(1, 2);
+    newtask = text.slice(2).join(" ");
+    edit(num, newtask);
+  }
   else{
     unknownCommand(text[0]);
   }
@@ -126,6 +131,16 @@ function remove(x) {
     tasks.splice(1, 1);
   }
 }
+function edit(n, x) {
+  if (n == "" && x == "") {
+    console.log("error! what do you want to edit?");
+  } else if (isNaN(n)) {
+    tasks[tasks.length - 1] = n + " " + x;
+  } else {
+    tasks[n - 1] = x;
+  }
+}
+  
 
 /**
  * Exits the application
