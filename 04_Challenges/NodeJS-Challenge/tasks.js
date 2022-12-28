@@ -92,6 +92,10 @@ function help(){
   console.log('hello: says hello!')
   console.log('hello x: says hello x!')
   console.log('exit/quit: quits the application')
+  console.log('list: lists the tasks')
+  console.log('add: adds a task to the list')
+  console.log('remove: removes the last task from the list')
+  console.log('remove x: removes x task from the list')
 }
 var tasks = ["solve the challenge", "commit the code"];
 
