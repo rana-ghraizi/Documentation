@@ -120,6 +120,8 @@ function remove(x) {
     tasks.pop();
   } else if (x === "remove 1"){
     tasks.splice(0, 1);
+  } else if (x <= 0 || x > tasks.length){
+    console.log('does not exist');
   } else {
     tasks.splice(1, 1);
   }
