@@ -46,6 +46,9 @@ function onDataReceived(text) {
   else if(text[0] === 'help'){
     help();
   }
+  else if(text[0] === 'list'){
+    list();
+  }
   else{
     unknownCommand(text[0]);
   }
@@ -82,6 +85,12 @@ function help(){
   console.log('hello: says hello!')
   console.log('hello x: says hello x!')
   console.log('exit/quit: quits the application')
+}
+function list(){
+  let tasks = ["solve the challenge", "commit the code"];
+  for(i = 0; i < tasks.length; i++){
+    console.log(i + 1 + "- " + tasks[i]);
+  }
 }
 
 /**
