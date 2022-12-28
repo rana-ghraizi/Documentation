@@ -53,6 +53,9 @@ function onDataReceived(text) {
     text.shift();
     add(text.join(" "));
   }
+  else if (text[0] === "remove") {
+    remove(text);
+  }
   else{
     unknownCommand(text[0]);
   }
@@ -106,6 +109,15 @@ function add(x){
       console.log(i + 1 + "- " + tasks[i]);
     }
   
+  }
+}
+function remove(x) {
+  if (x === "remove") {
+    tasks.pop();
+  } else if (x === "remove 1"){
+    tasks.splice(0, 1);
+  } else {
+    tasks.splice(1, 1);
   }
 }
 
