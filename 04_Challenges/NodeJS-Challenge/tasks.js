@@ -114,6 +114,16 @@ function help(){
 }
 var tasks = ["solve the challenge", "commit the code"];
 var done = [false, true];
+const fs = require('fs');
+try {
+ let newData = fs.readFileSync('database.json')
+ let D = JSON.parse(newData);
+ console.log(D);
+ console.log('Data loaded');
+}
+catch (error) {
+  console.log(error);
+}
 
 function list(){
   for(i = 0; i < tasks.length; i++){
@@ -179,8 +189,16 @@ function uncheck(x) {
  */
 function quit(){
   console.log('Quitting now, goodbye!')
-  process.exit();
-}
-
+  const fs = require('fs');
+  const data = JSON.stringify(tasks);
+  try {
+    fs.writeFileSync('database.json', data);
+      console.log('Data saved');
+     }
+      catch (error){
+        console.log(error);
+      }
+      process.exit();
+    }
 // The following line starts the application
 startApp("Rana Ghraizi")
