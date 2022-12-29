@@ -60,6 +60,14 @@ function onDataReceived(text) {
     num = text.slice(1, 2);
     newtask = text.slice(2).join(" ");
     edit(num, newtask);
+  } 
+  else if (text[0] === "check") {
+    text.shift();
+    check(text);
+  }
+  else if (text[0] === "uncheck") {
+    text.shift();
+    uncheck(text);
   }
   else{
     unknownCommand(text[0]);
@@ -144,6 +152,20 @@ function edit(n, x) {
     tasks[tasks.length - 1] = n + " " + x;
   } else {
     tasks[n - 1] = x;
+  }
+}
+function check(x) {
+  if (x == "") {
+    console.log("error!!");
+  } else {
+    done[x - 1] = true;
+  }
+}
+function uncheck(x) {
+  if (x == "") {
+    console.log("error!!");
+  } else {
+    done[x - 1] = false;
   }
 }
   
