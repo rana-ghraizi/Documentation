@@ -109,6 +109,8 @@ function help(){
   console.log('add: adds a task to the list')
   console.log('remove: removes the last task from the list')
   console.log('remove x: removes x task from the list')
+  console.log('check x: checks x task in the list')
+  console.log('uncheck x: uchecks x task in the list')
 }
 var tasks = ["solve the challenge", "commit the code"];
 var done = [false, true];
