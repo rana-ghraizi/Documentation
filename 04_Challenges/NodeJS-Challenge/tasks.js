@@ -103,10 +103,16 @@ function help(){
   console.log('remove x: removes x task from the list')
 }
 var tasks = ["solve the challenge", "commit the code"];
+var done = [false, true];
 
 function list(){
   for(i = 0; i < tasks.length; i++){
-    console.log(i + 1 + "- " + tasks[i]);
+    if(done[i] === true){
+      console.log(i + 1 + "- " + "[✓]" + tasks[i]);
+    } else {
+      console.log(i + 1 + "- " + "[ ]" + tasks[i]);
+    }
+    
   }
 }
 function add(x){
