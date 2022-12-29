@@ -115,15 +115,47 @@ function help(){
 var tasks = ["solve the challenge", "commit the code"];
 var done = [false, true];
 const fs = require('fs');
-try {
- let newData = fs.readFileSync('database.json')
- let D = JSON.parse(newData);
- console.log(D);
- console.log('Data loaded');
+console.log(process.argv);
+if (process.argv.length > 2) {
+  const fs = require('fs');
+  const data = JSON.stringify(tasks);
+  try {
+    fs.writeFileSync(process.argv[2], data);
+      console.log('Data saved');
+     }
+  catch (error){
+    console.log(error);
+  }
+  try {
+    let newData = fs.readFileSync(process.argv[2]);
+    let D = JSON.parse(newData);
+    console.log(D);
+    console.log('Data loaded');
+  }
+  catch (error) {
+    console.log(error);
+  } 
+} else {
+  const fs = require('fs');
+  const data = JSON.stringify(tasks);
+  try {
+    fs.writeFileSync('database.json', data);
+      console.log('Data saved');
+     }
+  catch (error){
+    console.log(error);
+  }
+  try {
+    let newData = fs.readFileSync('database.json');
+    let D = JSON.parse(newData);
+    console.log(D);
+    console.log('Data loaded');
+  }
+  catch (error) {
+    console.log(error);
+  } 
 }
-catch (error) {
-  console.log(error);
-}
+
 
 function list(){
   for(i = 0; i < tasks.length; i++){
