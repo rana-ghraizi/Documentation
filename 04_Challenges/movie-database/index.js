@@ -57,8 +57,18 @@ app.get('/movies/create', (req, res) => {
 app.get('/movies/read', (req, res) => {
     res.send({ status: 200, data: movies});
 })
-app.get('/movies/update', (req, res) => { 
-    res.send({ });
+app.get('/movies/update/:id', (req, res) => { 
+    let id = req.params.id;
+    let newTitle = req.query.title;
+    movies[id - 1] = {title: newTitle, year: movies[req.params.id - 1].year, rating: movies[req.params.id - 1].rating};
+    res.send(movies);
+});
+app.get('/movies/update/:id', (req, res) => { 
+    let id = req.params.id;
+    let newTitle = req.query.title;
+    let newRating = req.query.rating;
+    movies[id - 1] = {title: newTitle, year: movies[req.params.id - 1].year, rating: newRating};
+    res.send(movies);
 });
 app.get('/movies/delete/:id', (req, res) => {
     if (req.params.id <= 0 || req.params.id > movies.length){
