@@ -60,8 +60,13 @@ app.get('/movies/read', (req, res) => {
 app.get('/movies/update', (req, res) => { 
     res.send({ });
 });
-app.get('/movies/delete', (req, res) => {
-    res.send({ });
+app.get('/movies/delete/:id', (req, res) => {
+    if (req.params.id <= 0 || req.params.id > movies.length){
+        res.send({ status:404, error:true, message:"the movie " + req.params.id + " does not exist"});
+    } else {
+        movies.splice(req.params.id - 1, 1);
+        res.send({ status:200, data: movies});
+    }
 })
 app.get('/movies/read/by-date', (req, res) => {
     const sortedMovies = movies.sort((a, b) => a.year - b.year);
