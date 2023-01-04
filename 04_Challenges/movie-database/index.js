@@ -41,7 +41,18 @@ const movies = [
     { title: 'الإرهاب والكباب‎', year: 1992, rating: 6.2 }
 ]
 app.get('/movies/create', (req, res) => { 
-    res.send({ });
+    const { title, year, rating } = req.query
+    const newMovie = { title, year, rating }
+    if (title == "" || year == "" || year.toString().length != 4 || isNaN( year)){
+        res.send({ status:403, error:true, message:'you cannot create a movie without providing a title and a year'})
+    } else if (rating == ""){
+        const movie = { title: req.query.title, year: req.query.year, rating: 4 };
+        movies.push( movie)
+        res.send({ status: 200, data: movies})
+    } else {
+        movies.push(newMovie)
+        res.send({ status: 200, data: movies})
+    }
 });
 app.get('/movies/read', (req, res) => {
     res.send({ status: 200, data: movies});
