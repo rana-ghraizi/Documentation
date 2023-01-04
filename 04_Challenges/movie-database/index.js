@@ -40,7 +40,7 @@ const movies = [
     { title: 'Brazil', year: 1985, rating: 8 },
     { title: 'الإرهاب والكباب‎', year: 1992, rating: 6.2 }
 ]
-app.get('/movies/create', (req, res) => { 
+app.post('/movies/create', (req, res) => { 
     const { title, year, rating } = req.query
     const newMovie = { title, year, rating }
     if (title == "" || year == "" || year.toString().length != 4 || isNaN( year)){
@@ -57,20 +57,20 @@ app.get('/movies/create', (req, res) => {
 app.get('/movies/read', (req, res) => {
     res.send({ status: 200, data: movies});
 })
-app.get('/movies/update/:id', (req, res) => { 
+app.put('/movies/update/:id', (req, res) => { 
     let id = req.params.id;
     let newTitle = req.query.title;
     movies[id - 1] = {title: newTitle, year: movies[req.params.id - 1].year, rating: movies[req.params.id - 1].rating};
     res.send(movies);
 });
-app.get('/movies/update/:id', (req, res) => { 
+app.put('/movies/update/:id', (req, res) => { 
     let id = req.params.id;
     let newTitle = req.query.title;
     let newRating = req.query.rating;
     movies[id - 1] = {title: newTitle, year: movies[req.params.id - 1].year, rating: newRating};
     res.send(movies);
 });
-app.get('/movies/delete/:id', (req, res) => {
+app.delete('/movies/delete/:id', (req, res) => {
     if (req.params.id <= 0 || req.params.id > movies.length){
         res.send({ status:404, error:true, message:"the movie " + req.params.id + " does not exist"});
     } else {
