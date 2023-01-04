@@ -68,3 +68,10 @@ app.get('/movies/read/by-title', (req, res) => {
     });
     res.send({ status: 200, data: sortedMovies});
 })
+app.get('/movies/read/id/:id', (req, res) => {
+    if (req.params.id <= 0 || req.params.id > movies.length){
+        res.send({ status:404, error:true, message:'the movie " + req.params.id + " does not exist'});
+    } else {
+        res.send({ status:200, data: movies[req.params.id - 1]});
+    }
+})
